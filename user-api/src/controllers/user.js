@@ -1,4 +1,4 @@
-const db = require('../dbClient')
+const client = require('../dbClient')
 
 module.exports = {
   create: (user, callback) => {
@@ -10,14 +10,33 @@ module.exports = {
       firstname: user.firstname,
       lastname: user.lastname,
     }
-    // Save to DB
-    // TODO check if user already exists
-    db.hmset(user.username, userObj, (err, res) => {
-      if (err) return callback(err, null)
-      callback(null, res) // Return callback
-    })
+    // Check if user already exists
+    client.hgetall(user.username,(err,res) => {
+      if(err) return callback(err,null);
+      if(!res){
+        // Save to DB
+        client.hmset(user.username, userObj, (err, res) => {
+          if (err) return callback(err, null);
+          return callback(null, res); // Return callback
+        });
+      }
+      else {
+        return callback(new Error("User already exists"), null);
+      }
+    });
   },
-  // get: (username, callback) => {
-  //   // TODO create this method
-  // }
-}
+  get: (username, callback) => {
+    // TODO create this method
+    if(!username)
+      return callback(new Error("Wrong username parameter"), null);
+
+      client.hgetall(username,(err,res)=>{
+        if(err) return callback(err,null);
+        if(res) 
+          callback(null,res);
+        else
+          callback(new Error("No user with username: "+username),null);
+      });
+
+  }
+};
