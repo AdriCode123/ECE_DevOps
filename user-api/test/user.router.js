@@ -18,18 +18,22 @@ describe('User REST API', () => {
     client.quit()
   });
 
+
   describe('POST /user', () => {
 
     it('create a new user', (done) => {
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
+
       };
+
       chai.request(app)
         .post('/user')
         .send(user)
         .then((res) => {
+
           chai.expect(res).to.have.status(201);
           chai.expect(res.body.status).to.equal('success');
           chai.expect(res).to.be.json;
@@ -40,15 +44,19 @@ describe('User REST API', () => {
         });
     });
 
+
     it('pass wrong parameters', (done) => {
       const user = {
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
+
       };
+
       chai.request(app)
         .post('/user')
         .send(user)
         .then((res) => {
+
           chai.expect(res).to.have.status(400);
           chai.expect(res.body.status).to.equal('error');
           chai.expect(res).to.be.json;
@@ -63,9 +71,9 @@ describe('User REST API', () => {
   describe('GET /user', ()=> {
     it('get an existing user', (done) => {
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
       };
       //Create a user
       userController.create(user,()=>{
@@ -100,3 +108,4 @@ describe('User REST API', () => {
 
   });
 });
+

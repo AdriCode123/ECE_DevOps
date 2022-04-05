@@ -1,5 +1,6 @@
 const { expect } = require('chai')
 const userController = require('../src/controllers/user')
+
 const db = require('../src/dbClient');
 
 describe('User', () => {
@@ -14,9 +15,11 @@ describe('User', () => {
 
     it('create a new user', (done) => {
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
+
       }
       userController.create(user, (err, result) => {
         expect(err).to.be.equal(null)
@@ -27,8 +30,10 @@ describe('User', () => {
 
     it('passing wrong user parameters', (done) => {
       const user = {
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
+
       }
       userController.create(user, (err, result) => {
         expect(err).to.not.be.equal(null)
@@ -37,12 +42,13 @@ describe('User', () => {
       })
     })
 
+
     it('avoid creating an existing user', (done)=> {
       // Warning: the user already exists
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
       };
       userController.create(user, (err, result) => {
         expect(err).to.be.not.equal(null);
@@ -58,17 +64,17 @@ describe('User', () => {
       // 1. First, create a user to make this unit test independent from the others
       // 2. Then, check if the result of the get method is correct
       const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
       };
       userController.create(user, () => {
 
         userController.get(user.username,(err,result) => {
           expect(err).to.be.equal(null);
           expect(result).to.be.eql({
-            firstname: 'Sergei',
-            lastname: 'Kudinov'
+            firstname: 'Adrien',
+            lastname: 'Mezzarobba'
           });
           done();
         });
@@ -80,9 +86,9 @@ describe('User', () => {
       // 1. First, create a user to make this unit test independent from the others
       // 2. Then, check if the result of the get method is correct
       const user = {
-        username: 'polocto',
-        firstname: 'Paul',
-        lastname: 'Sade'
+        username: 'AdriCode123',
+        firstname: 'Adrien',
+        lastname: 'Mezzarobba'
       };
       userController.get(user.username,(err,result) => {
         expect(err).to.be.not.equal(null);

@@ -1,5 +1,6 @@
 const client = require('../dbClient')
 
+
 module.exports = {
   create: (user, callback) => {
     // Check parameters
@@ -10,6 +11,7 @@ module.exports = {
       firstname: user.firstname,
       lastname: user.lastname,
     }
+
     // Check if user already exists
     client.hgetall(user.username,(err,res) => {
       if(err) return callback(err,null);
