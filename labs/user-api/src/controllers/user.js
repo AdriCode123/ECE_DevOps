@@ -40,15 +40,5 @@ module.exports = {
           callback(new Error("No user with username: "+username),null);
       });
 
-  },
-  delete: (username, callback) => {
-    if(!username)
-      return callback(new Error("Wrong username parameter"), null)
-    
-      client.del(username,(err,res) => {
-        if(!res) return callback(new Error("User doesn't exist"),null);
-        return callback(null,res);
-      })
-  },
+  }
 };
-

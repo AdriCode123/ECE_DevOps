@@ -98,43 +98,4 @@ describe('User', () => {
     });
 
   })
-
-  //delete user
-  describe('Delete', () => {
-    it(('delete a user', (done)=>{
-      const user = {
-        username: 'AdriCode123',
-        firstname: 'Adrien',
-        lastname: 'Mezzarobba'
-      };
-      userController.create(user, () => {
-        userController.delete(user.username,(err,result) => {
-          expect(err).to.be.equal(null);
-          expect(result).not.to.be.equal(null);
-          userController.get(user.username,(err,result) => {
-            expect(err).to.not.be.equal(null);
-            expect(result).to.be.eql(null);
-            done();
-          });
-        });
-      })
-      it("can't delete a user that doesn't exist", (done)=>{
-        const user = {
-          username: 'AdriCode123',
-          firstname: 'Adrien',
-          lastname: 'Mezzarobba'
-        };
-        userController.get(user.username,(err,result) => {
-          expect(err).to.be.not.equal(null);
-          expect(result).to.be.equal(null);
-          done();
-        });
-
-      } )
-
-
-    }))
-  })
-
-
 })
