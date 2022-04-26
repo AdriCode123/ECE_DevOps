@@ -13,7 +13,7 @@
 git clone https://github.com/AdriCode123/ECE_DevOps.git
 ```
 
-- [Install dependencies for userapi](./userapi/README.md#installation)
+- [Install dependencies for userapi](./user-api/README.md#installation)
 
 - [Install Vagrant](iac/README.md#prerequisite)
 
@@ -23,7 +23,7 @@ git clone https://github.com/AdriCode123/ECE_DevOps.git
 
 ### Usage
 
-- [Start userapi](./userapi/README.md#usage)
+- [Start userapi](./user-api/README.md#usage)
 
 - [Use Vagrant](iac/README.md#usage)
 
@@ -41,7 +41,7 @@ docker-compose up
 
 ### Test
 
-- [Test userapi](./userapi/README.md#testing)
+- [Test userapi](./user-api/README.md#testing)
 
 ## Tools
 
