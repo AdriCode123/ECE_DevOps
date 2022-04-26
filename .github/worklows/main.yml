@@ -52,3 +52,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "appfordevops" # Must be unique in Heroku
           heroku_email: "adrien.mezzarobba@edu.ece.fr" # Heroku account email
+          appdir: user-api # Define appdir if you application is in a subfolder
