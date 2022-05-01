@@ -8,6 +8,6 @@ RUN npm ci
 
 COPY user-api .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
