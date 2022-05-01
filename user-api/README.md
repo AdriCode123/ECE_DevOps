@@ -23,6 +23,21 @@ Go to the root directory of the application (where `package.json` file located) 
 npm install 
 ```
 
+After installation, start Redis server:
+
+- **Windows:** double click on `redis-server.exe` file (keep it open)
+- **MacOS and Linux:** `redis-server`
+
+![redis exe](C:\Users\33777\Documents\ECE cours\S8\devops\ECE_DevOps\image\redis.png)
+
+Test if the Redis server is running:
+
+- **Windows:** double click on `redis-cli.exe` and run the `ping` command inside the REPL
+- **MacOS and Linux:** run in a new terminal window `redis-cli ping` (should answer with "PONG")
+
+For us, it is well running : 
+![redis running](C:\Users\33777\Documents\ECE cours\S8\devops\ECE_DevOps\image\redis_ping.png)
+
 ## Usage
 
 1. Start a web server
@@ -43,7 +58,7 @@ Send a POST (REST protocol) request using terminal:
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
-  http://localhost:3000/user
+  http://localhost:3030/user
 ```
 
 It will output:
@@ -53,6 +68,11 @@ It will output:
 ```
 
 Another way to test your REST API is to use [Postman](https://www.postman.com/).
+
+3. Delete a user
+
+You can also choose to delete a user
+
 
 ## Testing
 
@@ -65,4 +85,5 @@ npm test
 ## Author
 
 Sergei Kudinov   
-sergei@adaltas.com
+Célia Delagoutte
+Adrien Mezzarobba
