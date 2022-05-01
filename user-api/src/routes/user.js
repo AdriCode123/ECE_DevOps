@@ -1,5 +1,5 @@
 const express = require('express')
-const userController = require('../../../../ece-devops-2022-spring-master/courses/devops/modules/03.continuous-testing/lab/src/controllers/user')
+const userController = require('../controllers/user')
 
 const userRouter = express.Router()
 

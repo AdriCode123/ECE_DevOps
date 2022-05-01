@@ -33,7 +33,7 @@ From the root directory of the project run:
 npm start
 ```
 
-It will start a web server available in your browser at http://localhost:3000.
+It will start a web server available in your browser at http://localhost:3030.
 
 2. Create a user
 

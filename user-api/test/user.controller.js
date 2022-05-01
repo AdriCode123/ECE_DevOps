@@ -1,25 +1,21 @@
 const { expect } = require('chai')
 const userController = require('../src/controllers/user')
-
-const db = require('../src/dbClient');
+const db = require('../src/dbClient')
 
 describe('User', () => {
-
-  before(() => {
+  
+  beforeEach(() => {
     // Clean DB before each test
-    db.flushdb();
-  });
-
+    db.flushdb()
+  })
 
   describe('Create', () => {
 
     it('create a new user', (done) => {
       const user = {
-
         username: 'AdriCode123',
         firstname: 'Adrien',
         lastname: 'Mezzarobba'
-
       }
       userController.create(user, (err, result) => {
         expect(err).to.be.equal(null)
@@ -30,10 +26,8 @@ describe('User', () => {
 
     it('passing wrong user parameters', (done) => {
       const user = {
-
         firstname: 'Adrien',
         lastname: 'Mezzarobba'
-
       }
       userController.create(user, (err, result) => {
         expect(err).to.not.be.equal(null)
@@ -41,7 +35,6 @@ describe('User', () => {
         done()
       })
     })
-
 
     it('avoid creating an existing user', (done)=> {
       // Warning: the user already exists
@@ -98,7 +91,6 @@ describe('User', () => {
     });
 
   })
-
   //delete user
   describe('Delete', () => {
     it(('delete a user', (done)=>{
@@ -135,6 +127,4 @@ describe('User', () => {
 
     }))
   })
-
-
 })
