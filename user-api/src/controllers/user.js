@@ -31,7 +31,6 @@ module.exports = {
     // TODO create this method
     if(!username)
       return callback(new Error("Wrong username parameter"), null);
-
       client.hgetall(username,(err,res)=>{
         if(err) return callback(err,null);
         if(res) 
@@ -43,8 +42,7 @@ module.exports = {
   },
   delete: (username, callback) => {
     if(!username)
-      return callback(new Error("Wrong username parameter"), null)
-    
+      return callback(new Error("Wrong username parameter"), null);
       client.del(username,(err,res) => {
         if(!res) return callback(new Error("User doesn't exist"),null);
         return callback(null,res);
