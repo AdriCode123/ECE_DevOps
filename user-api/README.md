@@ -69,9 +69,15 @@ It will output:
 
 Another way to test your REST API is to use [Postman](https://www.postman.com/).
 
-3. Delete a user
+3. Delete a user (bonus)
 
 You can also choose to delete a user
+```
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
+ http://localhost:3030/user
+```
 
 
 ## Testing
