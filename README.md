@@ -82,6 +82,21 @@ The image is now on the Docker Hub
 docker-compose up
 ```
 
+The output :        
+
+![img](/image/compose-up-1.png)
+![img](/image/compose-up-2.png)
+
+The server web:     
+
+![img](/image/hello-world-compose.png)
+
+For wordpress:      
+
+![img](/image/wordpress-sql.png)
+
+
+
 ### Test
 
 - [Test userapi](./user-api/README.md#testing)
