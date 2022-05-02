@@ -39,7 +39,7 @@ docker build -t projet-devops .
 ```sh
 docker images
 ```
-The output: 
+The output:             
 ![cmd](/image/docker_image_cmd.png)
 
 3. Run the container with the following command:   
@@ -52,7 +52,7 @@ The output:
 docker ps
 ```
 
-The output: 
+The output:             
 ![cmd](/image/docker-image-ps.png)
 
 
